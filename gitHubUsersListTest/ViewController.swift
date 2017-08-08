@@ -8,10 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ApiManagerDelegate {
+    fileprivate let apiManager = ApiManager()
+    var users = [UserModel]()
+
+    @IBOutlet weak var usersTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        apiManager.delegate = self
+        apiManager.getGitHubUsers(urlString: "https://api.github.com/users?page=1&per_page=120")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -20,20 +27,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func getGitHubUsers(urlString: String) {
-        let url = URL.init(string: urlString)
-        
-        
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            DispatchQueue.main.async(execute: {
-                
-            })
-        }
-        task.resume()
-    }
-
-    func fillWith(usersData: NSData) {
-        let json = JSONSerialization.jsonObject(with: <#T##Data#>, options: <#T##JSONSerialization.ReadingOptions#>)
+    
+    func getUserModels(array: [UserModel]!) {
+        print(array)
     }
 }
 
