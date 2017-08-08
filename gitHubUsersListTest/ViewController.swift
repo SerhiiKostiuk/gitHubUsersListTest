@@ -20,6 +20,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func getGitHubUsers(urlString: String) {
+        let url = URL.init(string: urlString)
+        
+        
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            DispatchQueue.main.async(execute: {
+                
+            })
+        }
+        task.resume()
+    }
 
+    func fillWith(usersData: NSData) {
+        let json = JSONSerialization.jsonObject(with: <#T##Data#>, options: <#T##JSONSerialization.ReadingOptions#>)
+    }
 }
+
+
+
 
