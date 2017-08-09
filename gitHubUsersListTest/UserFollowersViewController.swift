@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserFolowersViewController: UIViewController {
+class UserFollowersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
