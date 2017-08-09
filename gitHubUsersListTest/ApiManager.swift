@@ -51,7 +51,5 @@ class ApiManager: NSObject {
         } catch {
             print("Could not serialise")
         }
-        
-        
     }
 }
