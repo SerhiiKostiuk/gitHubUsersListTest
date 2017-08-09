@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, ApiManagerDelegate {
+class ViewController: UIViewController, ApiManagerDelegate, UITableViewDataSource, UITableViewDelegate {
     fileprivate let apiManager = ApiManager()
     var users = [UserModel]()
 
@@ -30,6 +30,21 @@ class ViewController: UIViewController, ApiManagerDelegate {
     
     func getUserModels(array: [UserModel]!) {
         print(array)
+        
+        users = array
+        usersTableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+        
+        cell.fillCellWith(model: users[indexPath.item])
+        return cell
     }
 }
 
