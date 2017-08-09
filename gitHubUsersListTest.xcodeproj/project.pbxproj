@@ -13,9 +13,10 @@
 		CD36058E1F3A13D600E59F0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD36058C1F3A13D600E59F0C /* Main.storyboard */; };
 		CD3605901F3A13D600E59F0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD36058F1F3A13D600E59F0C /* Assets.xcassets */; };
 		CD3605931F3A13D600E59F0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD3605911F3A13D600E59F0C /* LaunchScreen.storyboard */; };
+		CD88C46D1F3B180500B5C9CD /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD88C46B1F3B180500B5C9CD /* UserTableViewCell.swift */; };
+		CD88C46E1F3B180500B5C9CD /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD88C46C1F3B180500B5C9CD /* UserTableViewCell.xib */; };
 		CDA2ACBE1F3A5C620067A354 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA2ACBD1F3A5C620067A354 /* ApiManager.swift */; };
 		CDA2ACC01F3A5EAE0067A354 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA2ACBF1F3A5EAE0067A354 /* UserModel.swift */; };
-		CDA2ACC21F3A65AD0067A354 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA2ACC11F3A65AD0067A354 /* UserTableViewCell.swift */; };
 		CDA2ACC41F3AE9020067A354 /* UserFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA2ACC31F3AE9020067A354 /* UserFollowersViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,9 +30,10 @@
 		CD36058F1F3A13D600E59F0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD3605921F3A13D600E59F0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD3605941F3A13D600E59F0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD88C46B1F3B180500B5C9CD /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		CD88C46C1F3B180500B5C9CD /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		CDA2ACBD1F3A5C620067A354 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		CDA2ACBF1F3A5EAE0067A354 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		CDA2ACC11F3A65AD0067A354 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		CDA2ACC31F3AE9020067A354 /* UserFollowersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFollowersViewController.swift; sourceTree = "<group>"; };
 		D438E8EA2D196F1C225665F1 /* Pods-gitHubUsersListTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gitHubUsersListTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-gitHubUsersListTest/Pods-gitHubUsersListTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,8 +88,9 @@
 				CD3605941F3A13D600E59F0C /* Info.plist */,
 				CDA2ACBD1F3A5C620067A354 /* ApiManager.swift */,
 				CDA2ACBF1F3A5EAE0067A354 /* UserModel.swift */,
-				CDA2ACC11F3A65AD0067A354 /* UserTableViewCell.swift */,
 				CDA2ACC31F3AE9020067A354 /* UserFollowersViewController.swift */,
+				CD88C46B1F3B180500B5C9CD /* UserTableViewCell.swift */,
+				CD88C46C1F3B180500B5C9CD /* UserTableViewCell.xib */,
 			);
 			path = gitHubUsersListTest;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD88C46E1F3B180500B5C9CD /* UserTableViewCell.xib in Resources */,
 				CD3605931F3A13D600E59F0C /* LaunchScreen.storyboard in Resources */,
 				CD3605901F3A13D600E59F0C /* Assets.xcassets in Resources */,
 				CD36058E1F3A13D600E59F0C /* Main.storyboard in Resources */,
@@ -228,8 +232,8 @@
 				CDA2ACBE1F3A5C620067A354 /* ApiManager.swift in Sources */,
 				CDA2ACC01F3A5EAE0067A354 /* UserModel.swift in Sources */,
 				CD3605891F3A13D600E59F0C /* AppDelegate.swift in Sources */,
+				CD88C46D1F3B180500B5C9CD /* UserTableViewCell.swift in Sources */,
 				CDA2ACC41F3AE9020067A354 /* UserFollowersViewController.swift in Sources */,
-				CDA2ACC21F3A65AD0067A354 /* UserTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
