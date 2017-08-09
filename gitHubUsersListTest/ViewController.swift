@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, ApiManagerDelegate, UITableViewDataSource, UITableViewDelegate {
-    fileprivate let apiManager = ApiManager()
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    fileprivate var apiManager = ApiManager.shared
     var users = [UserModel]()
 
     @IBOutlet weak var usersTableView: UITableView!
@@ -17,24 +17,12 @@ class ViewController: UIViewController, ApiManagerDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        usersTableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
+
         apiManager.delegate = self
         apiManager.getGitHubUsers(urlString: "https://api.github.com/users?page=1&per_page=120")
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    
-    func getUserModels(array: [UserModel]!) {
-        print(array)
-        
-        users = array
-        usersTableView.reloadData()
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
@@ -46,8 +34,26 @@ class ViewController: UIViewController, ApiManagerDelegate, UITableViewDataSourc
         cell.fillCellWith(model: users[indexPath.item])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = users[indexPath.item]
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let userFollowersVC = mainStoryboard.instantiateViewController(withIdentifier: "UserFollowersViewController") as! UserFollowersViewController
+        userFollowersVC.user = model
+        navigationController?.show(userFollowersVC, sender: nil)
+        
+    }
 }
 
+extension ViewController: ApiManagerDelegate {
+    func getUserModels(array: [UserModel]!) {
+        print(array)
+        
+        users.append(contentsOf: array)
+        usersTableView.reloadData()
+    }
+}
 
 
 
