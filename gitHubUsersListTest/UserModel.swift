@@ -12,11 +12,13 @@ class UserModel: NSObject {
     let login: String!
     let profileLink: String!
     let avatarUrl: String!
-    
+    let folowersUrl: String!
+
     init(withDictionary dictionary: [String : Any]) {
         login = dictionary["login"] as! String
         profileLink = dictionary["html_url"] as! String
         avatarUrl = dictionary["avatar_url"] as! String
+        folowersUrl = dictionary["followers_url"] as! String
         
         super.init()
     }
