@@ -1,0 +1,6 @@
+framework module Pods_gitHubUsersListTest {
+  umbrella header "Pods-gitHubUsersListTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
